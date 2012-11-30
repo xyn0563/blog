@@ -4,5 +4,5 @@ title:  welcome!
 ---
 # 文章列表
 {% for post in site.posts %}
-* [{{ site.baseurl}}{{post.url}}]({{ site.baseurl}}{{post.url}}) {{ post.date | date_to_string }}
+* [{{ post.title }}]({{ site.baseurl}}{{post.url}}) {{ post.date | date_to_string }}
 {% endfor %}
