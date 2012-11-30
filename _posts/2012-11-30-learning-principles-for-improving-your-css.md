@@ -1,6 +1,6 @@
 ---
 layout: default
-title: hello world
+title: learning principles for improving you css 
 ---
 
 # LEARNING PRINCIPLES FOR IMPROVING YOUR CSS
