@@ -53,12 +53,17 @@ Don’t Repeat Yourself,不要重复你自己。不光是CSS，做其他事情�
 
 ``
 .navigation li {color: #333;}
+
 .navigation li a {color: #333;}
 
 /\*refatcoring 重构如下：\*/
+
 .navigation li,
+
 .navigation li a {
-     color: #333;
+
+  color: #333;
+
 }
 ``
 这个重构使得代码从两方面得到提升：效率和可维护性(performance and maintainability)
