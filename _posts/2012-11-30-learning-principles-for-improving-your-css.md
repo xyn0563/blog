@@ -3,75 +3,86 @@ layout: default
 title: learning principles for improving you css 
 ---
 
+看最近一期的[css weekly](http://css-weekly.com/issue-35/)上看到的一篇文章，说得时如何提高你的CSS技能。
+
+个人觉得写得挺好的，尤其是对于一些学得已经掌握了CSS，做了一段时间，而又不知道从何提高的同学来说，有一定的指导意义。
+
+所以大概地翻译了一下，原文在[这里](http://tympanus.net/codrops/2012/11/20/learning-principles-for-improving-your-css/)，里面推荐的许多文章或网站都值得一看。
+
 # LEARNING PRINCIPLES FOR IMPROVING YOUR CSS
-## 1.Don’t rush your code and keep it simp
+
 ### Dont’t rush you code,不要捉急写代码，并且，保持简洁。
 
-  在开始之前，先问一下自己：
-  
-  How would I do this?
-  我要怎么去实现它？
+在开始之前，先问一下自己：
 
-  Is there another way?
-  有别的办法吗？
-  
-  How can I optimize it (to be maintainable, clean, cool, etc.)?
-  如何去优化(易维护，简洁，cool...)
-  
-  仓促动手，往往事得其反。
+How would I do this?
+我要怎么去实现它？
+
+Is there another way?
+有别的办法吗？
+
+How can I optimize it (to be maintainable, clean, cool, etc.)?
+如何去优化(易维护，简洁，cool...)
+
+仓促动手，往往事得其反。
 
 ### keep it simple
 
-  CSS是个简单的东西，但是可以搞得很复杂，特别是你希望它复杂的时候。大多数时候，简单的想法就是最好的想法。当你在实现某个东西时，问问自己有没有更简单的方法，你会发现答案常常是肯定的。
+CSS是个简单的东西，但是可以搞得很复杂，特别是你希望它复杂的时候。大多数时候，简单的想法就是最好的想法。当你在实现某个东西时，问问自己有没有更简单的方法，你会发现答案常常是肯定的。
 
-## 2.Know the basics and learn the tricks基础，以及技巧
+## 2.基础，以及技巧
 
-     CSS最基础的两个方面：
-          盒模型
-          CSS标准
+CSS最基础的两个方面：
 
-     技巧:
-          类似这种:
-          absolute的元素，定位失败时，看一下父级元素是不是指定了relative
-          或者，z-index的怪异问题，或者，清除浮动。
+  盒模型
+  CSS标准
 
-     对于技巧，每天都有很多新的出现。作为前端，要大概了解这些内容，在出现问题的时候，知道去如何解决。
+技巧,类似这种:
+
+  absolute的元素，定位失败时，看一下父级元素是不是指定了relative
+
+  或者，z-index的怪异问题，或者，清除浮动。
+
+对于技巧，每天都有很多新的出现。作为前端，要大概了解这些内容，在出现问题的时候，知道去如何解决。
 
 ## 3.DRY
 
-     Don’t Repeat Yourself,不要重复你自己。不光是CSS，做其他事情同理。
+Don’t Repeat Yourself,不要重复你自己。不光是CSS，做其他事情同理。
 
-     意思是，在有可能一次性解决问题(实现某种样式)的情况下，不要重复地做同样的事情。对于其他语言来说，可以通过函数(function)之类的东东来避免重用，而在CSS里，可以通过编写可复用的类(class)来做到这一点。不过有时，通过简单的重构(refactoring)就可以实现。比如：
+意思是，在有可能一次性解决问题(实现某种样式)的情况下，不要重复地做同样的事情。对于其他语言来说，可以通过函数(function)之类的东东来避免重用，而在CSS里，可以通过编写可复用的类(class)来做到这一点。不过有时，通过简单的重构(refactoring)就可以实现。比如：
 
-     .navigation li {color: #333;}
-     .navigation li a {color: #333;}
+``
+.navigation li {color: #333;}
+.navigation li a {color: #333;}
 
-     /*refatcoring 重构如下：*/
-     .navigation li,
-     .navigation li a {
-          color: #333;
-     }
+/*refatcoring 重构如下：*/
+.navigation li,
+.navigation li a {
+     color: #333;
+}
+``
+这个重构使得代码从两方面得到提升：效率和可维护性(performance and maintainability)
 
-     这个重构使得代码从两方面得到提升：效率和可维护性(performance and maintainability)
-     效率：更少的行数，意味着浏览器的CSS解析器所花费的解析时间更少。简单来说，解析器会一次性在符合这两种选择器的元素上应用样式，而不是分两次进行。
-     可维护性：显然 ，这么做，在需要修改色值的时候，只要改一个地方即可。本例中，只有两个地方，看上去问题不大。但当有50个，甚至300个地方用到同一个颜色呢?
-## 4.OOCSS
-##面向对象的CSS
+效率：更少的行数，意味着浏览器的CSS解析器所花费的解析时间更少。简单来说，解析器会一次性在符合这两种选择器的元素上应用样式，而不是分两次进行。
+
+可维护性：显然 ，这么做，在需要修改色值的时候，只要改一个地方即可。本例中，只有两个地方，看上去问题不大。但当有50个，甚至300个地方用到同一个颜色呢?
+
+## 4.面向对象的CSS(OOCSS)
 
 ### OOCSS是啥东东？
 
-     CSS无法做到面向对象，no namespaces, no functions, no methods, no programming classes，no conditional statements。这只是一种概念，或者说是最佳实践。
+CSS无法做到面向对象，no namespaces, no functions, no methods, no programming classes，no conditional statements。这只是一种概念，或者说是最佳实践。
 
 ### 怎么做到的？
 
-     简单来说，就是使用class，很多很多的class，把你的网站，或是要构建的页面，想象成由一个个的模块以及组件构成。试着把公用的地方提取出来形成你的"实例"(class)达到重用的目的。
+简单来说，就是使用class，很多很多的class，把你的网站，或是要构建的页面，想象成由一个个的模块以及组件构成。试着把公用的地方提取出来形成你的"实例"(class)达到重用的目的。
 
-     做到：结构与外观分离，以及 容器与内容分离。
+做到：结构与外观分离，以及 容器与内容分离。
 
-     结构与外观分离(separate structure and appearance)：
+结构与外观分离(separate structure and appearance)：
 
-     意思是说一种表现形式可以应用到多种不同的元素上。比如：
-
+意思是说一种表现形式可以应用到多种不同的元素上。比如：
+``
      #my-button,
      .my-box,
      .my-box img {
@@ -79,6 +90,7 @@ title: learning principles for improving you css
           border-radius: 5px;
           box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
      }
+``
      以上是对特定的元素进行的样式定义。如果我们将它抽取成一个.skin的样式，那么它可以任意地应用到其他元素：
 
      .skin {
@@ -115,7 +127,6 @@ title: learning principles for improving you css
 
 
 ## 5.CSS3: learn what you can do and what you can use
-## 关于CSS3
 
 ### 了解CSS3可以做什么
 
@@ -189,16 +200,15 @@ title: learning principles for improving you css
 
 
 
-## 6.Progressive enhancement and graceful degradation
-## 逐步提升与优雅降级
+## 6.逐步提升与优雅降级
 
-### 逐步提升
+### 逐步提升(Progressive enhancement)
      
      当你完成最基本的功能与特性后，根据浏览器的支持情况，慢慢地改进用户体验。
 
      比如在一个输入框里，使用required属性，在用户提交表单之前，如果这个字段内容为空，则提醒用户。
 
-### 优雅降级
+### 优雅降级(degradation)
      
      是指当浏览不支持你所用到的特性时，提供一个替代方案。比如在canvas标签中加上文案，当不支持时提示用户。
 
@@ -208,10 +218,9 @@ title: learning principles for improving you css
 
      不一定非得追求不同浏览器下用户体验的一致性。事实上，由于浏览器的不同，这甚至是无法做到的。不管咋说，你要做的就是提供最基本的功能，然后为现代浏览器提供nb特性。
 
-## 7.CSS preprocessors
-## CSS预处理工具
+## 7.CSS预处理工具
 
-     简单来说，(css)预处理工具就是一种(css)编写工具，使用特定的语法来书写(css)，然后通过对应的编译程序输出原生的(css)内容。
+     简单来说，(css)预处理工具(preprocessors)就是一种(css)编写工具，使用特定的语法来书写(css)，然后通过对应的编译程序输出原生的(css)内容。
 
      之于HTML，有Markdown和Jade。之于css，有LESS，Sass，Stylus。之于javascript，有Coffescript。之于PHP，有CakePHP。
 
@@ -247,8 +256,7 @@ title: learning principles for improving you css
      编程语言一直在改变，CSS尤其如此。CSS标准一直在变，没有尽头，而浏览器也忙着支持新特性。
 
      所以建议对于新事物保持敏感。知道哪些特性，在什么时候，被哪些浏览器支持了。
-## 9.Read other people’s code
-学习其他人的代码
+## 9.阅读其他人的代码
 
      CSS运行在客户端，所以你能很容易地通过工具阅读其他人的代码。
 
@@ -257,7 +265,7 @@ title: learning principles for improving you css
      当掌握到一定程度时，你可能会去了解一些nb效果是怎么实现的，而这些效果有没有现成的文档或教程可以教你。那就需要靠自己去探索学习。你总会发现一些你做不到的事情，一山更比一山高。
 
      (作者)推荐一个网站：http://codepen.io/
-## 10.Keep practicing不断地实践
+## 10.不断地实践
 
      实践出真知。
 
