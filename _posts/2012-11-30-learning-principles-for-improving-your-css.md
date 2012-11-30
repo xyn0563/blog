@@ -11,7 +11,9 @@ title: learning principles for improving you css
 
 # LEARNING PRINCIPLES FOR IMPROVING YOUR CSS
 
-### Dont’t rush you code,不要捉急写代码，并且，保持简洁。
+### Dont’t rush you code and keep it simple
+
+不要捉急写代码，并且，保持简洁。
 
 在开始之前，先问一下自己：
 
