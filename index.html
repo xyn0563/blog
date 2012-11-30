@@ -1,3 +1,7 @@
-  {% for post in site.posts %}
-    * {{ post.date | date_to_string }}<a href="%7B%7Bsite.baseurl%7D%7D%7B%7Bpost.url%7D%7D">{{ post.title }}</a>
+---
+layout: default
+title:  welcome! 
+---
+{% for post in site.posts %}
+* {{ post.date | date_to_string }}<a href="{{ site.baseurl}}{{Bpost.url}}">{{ post.title }}</a>
   {% endfor %}
