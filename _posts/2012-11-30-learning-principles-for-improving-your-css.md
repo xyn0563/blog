@@ -3,7 +3,7 @@ layout: default
 title: learning principles for improving you css 
 ---
 
-看最近一期的[css weekly](http://css-weekly.com/issue-35/)上看到的一篇文章，说得时如何提高你的CSS技能。
+看最近一期的[css weekly](http://css-weekly.com/issue-35/)上看到的一篇文章，说的是如何提高你的CSS技能。
 
 个人觉得写得挺好的，尤其是对于一些学得已经掌握了CSS，做了一段时间，而又不知道从何提高的同学来说，有一定的指导意义。
 
