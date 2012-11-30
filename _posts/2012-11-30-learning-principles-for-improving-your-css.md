@@ -51,21 +51,14 @@ Don’t Repeat Yourself,不要重复你自己。不光是CSS，做其他事情�
 
 意思是，在有可能一次性解决问题(实现某种样式)的情况下，不要重复地做同样的事情。对于其他语言来说，可以通过函数(function)之类的东东来避免重用，而在CSS里，可以通过编写可复用的类(class)来做到这一点。不过有时，通过简单的重构(refactoring)就可以实现。比如：
 
-``
-.navigation li {color: #333;}
+    .navigation li {color: #333;}
+    .navigation li a {color: #333;}
+    /*refatcoring 重构如下:*/
+    .navigation li,
+    .navigation li a {
+      color: #333;
+    }
 
-.navigation li a {color: #333;}
-
-/\*refatcoring 重构如下：\*/
-
-.navigation li,
-
-.navigation li a {
-
-  color: #333;
-
-}
-``
 这个重构使得代码从两方面得到提升：效率和可维护性(performance and maintainability)
 
 效率：更少的行数，意味着浏览器的CSS解析器所花费的解析时间更少。简单来说，解析器会一次性在符合这两种选择器的元素上应用样式，而不是分两次进行。
