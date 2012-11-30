@@ -1,0 +1,5 @@
+---
+layout: default
+title: hello world
+---
+<h1>{{page.title}}</h1>
