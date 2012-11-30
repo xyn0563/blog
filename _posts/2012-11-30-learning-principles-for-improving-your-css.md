@@ -16,12 +16,15 @@ title: learning principles for improving you css
 在开始之前，先问一下自己：
 
 How would I do this?
+
 我要怎么去实现它？
 
 Is there another way?
+
 有别的办法吗？
 
 How can I optimize it (to be maintainable, clean, cool, etc.)?
+
 如何去优化(易维护，简洁，cool...)
 
 仓促动手，往往事得其反。
@@ -34,14 +37,15 @@ CSS是个简单的东西，但是可以搞得很复杂，特别是你希望它�
 
 CSS最基础的两个方面：
 
-  盒模型
-  CSS标准
+  *盒模型*
+
+  *CSS标准*
 
 技巧,类似这种:
 
-  absolute的元素，定位失败时，看一下父级元素是不是指定了relative
+    absolute的元素，定位失败时，看一下父级元素是不是指定了relative
 
-  或者，z-index的怪异问题，或者，清除浮动。
+    或者，z-index的怪异问题，或者，清除浮动。
 
 对于技巧，每天都有很多新的出现。作为前端，要大概了解这些内容，在出现问题的时候，知道去如何解决。
 
@@ -77,7 +81,7 @@ CSS无法做到面向对象，no namespaces, no functions, no methods, no progra
 
 做到：结构与外观分离，以及 容器与内容分离。
 
-结构与外观分离(separate structure and appearance)：
+*结构与外观分离(separate structure and appearance):*
 
 意思是说一种表现形式可以应用到多种不同的元素上。比如：
 
@@ -99,7 +103,7 @@ CSS无法做到面向对象，no namespaces, no functions, no methods, no progra
 
 经过改造后的代码看上去更容易理解，同时提高了效率和可维护性。
 
-容器与内容分离(separate container and content)
+*容器与内容分离(separate container and content)*
 
 个人(作者)认为这是OOCSS的一条重要准则：为组件编写代码，而不是只盯着眼前要实现的东西。不管元素摆在哪，你都不用因为它换了个地方而重新进行编码。看下面的代码：
 
@@ -112,17 +116,16 @@ CSS无法做到面向对象，no namespaces, no functions, no methods, no progra
 
 如果你想给#footer下的h2也应用这个样式怎么办？或者出于某种原因，h3也要应用这个样式？好的处理方法是将这个样式定义在一个class里，在需要的元素上，应用这个class。
 
-"弃用ID选择器?"是咋回事？
+*"弃用ID选择器"是咋回事？*
 
 [具体内容看原文，个人表示ID选择器在有些情况下还是要用嘀。]
 
 
-我(作者)对OOCSS的感受
+*我(作者)对OOCSS的感受*
 
-     没有经历过大型的网站项目，所以不太熟悉。对于单页(简单)的应用，可能作用不大。
+没有经历过大型的网站项目，所以不太熟悉。对于单页(简单)的应用，可能作用不大。
 
-     但是，OOCSS的核心思想(提高效率、可维护性)需要时时牢记。
-
+但是，OOCSS的核心思想(提高效率、可维护性)需要时时牢记。
 
 ## 5.CSS3: learn what you can do and what you can use
 
@@ -173,7 +176,7 @@ CSS的最大问题是各浏览的支持程度不一样，更可恨的是各家�
     5.那没别的办法了，必须要找到解决的方法。
           好吧，背景图出马。
 
-[建议大家都用这样一套方法，在做一个效果之前，来决定自己的解决方案]
+\[建议大家都用这样一套方法，在做一个效果之前，来决定自己的解决方案\]
 
 提醒：永远记得你的受众是谁。如果的作品是运行在iPad等搭载先进浏览器的设备上，那么可以放心大胆地使用CSS3的新特性而不用考虑兼容性。但是，如果你是为一个银行做页面，那知你得知道，它的很多用户仍然在使用老旧的IE8[在天朝就是IE6了]。
 
@@ -197,8 +200,6 @@ CSS的最大问题是各浏览的支持程度不一样，更可恨的是各家�
 一个JS库，在页面加载时，测试对HTML5和CSS3的支持。详情参考期网站：
 
 http://modernizr.com/
-
-
 
 ## 6.逐步提升与优雅降级
 
